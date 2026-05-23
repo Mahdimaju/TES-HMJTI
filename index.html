@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMJTI - Himpunan Mahasiswa Jurusan Teknologi Informasi</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Website Resmi Himpunan Mahasiswa Jurusan Teknologi Informasi (HMJTI). Pusat informasi kegiatan mahasiswa IT, akademik, berita, event, dan layanan aspirasi mahasiswa.">
+  <meta name="keywords"
+    content="HMJTI, Teknologi Informasi, Himpunan Mahasiswa, IT, Mahasiswa IT, Event IT, Lomba Coding, Jurusan TI, Akademik TI">
+  <meta name="author" content="HMJTI Development Team">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png"
+    href="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=100&q=80">
+
+  <!-- FontAwesome Icon CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styling (style.css) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOAST CONTAINER FOR NOTIFICATIONS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- DETAILS MODAL POPUP -->
+  <div id="details-modal" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close"><i class="fas fa-times"></i></button>
+      <div class="modal-header-img" id="modal-img-container">
+        <img src="" alt="Modal Image" id="modal-img">
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta" id="modal-meta">
+          <!-- Meta tags injected dynamically -->
+        </div>
+        <h3 class="modal-title" id="modal-title">Judul Detail</h3>
+        <div class="modal-text" id="modal-text">
+          <!-- Content injected dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER & NAVBAR NAVIGATION -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#beranda" class="logo">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=100&q=80"
+          alt="Logo HMJTI">
+        <span>HMJTI</span>
+      </a>
+
+      <!-- Toggle Mobile Burger Button -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Buka Menu Navigasi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav Menu Links -->
+      <nav class="nav-menu" id="nav-menu-links">
+        <a class="nav-link active" href="#beranda">Beranda</a>
+
+        <!-- Dropdown Submenu Tentang HMJTI -->
+        <div class="dropdown" id="dropdown-tentang">
+          <span class="nav-link">Tentang HMJTI <i class="fas fa-chevron-down"
+              style="font-size: 0.75rem; margin-left: 0.25rem;"></i></span>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#tentang-sejarah" data-tab="tab-sejarah">Sejarah</a></li>
+            <li><a class="dropdown-item" href="#tentang-visimisi" data-tab="tab-visimisi">Visi & Misi</a></li>
+            <li><a class="dropdown-item" href="#tentang-proker" data-tab="tab-proker">Program Kerja</a></li>
+            <li><a class="dropdown-item" href="#tentang-adart" data-tab="tab-adart">AD / ART</a></li>
+          </ul>
+        </div>
+
+        <a class="nav-link" href="#kepengurusan">Kepengurusan</a>
+        <a class="nav-link" href="#berita">Berita</a>
+        <a class="nav-link" href="#event">Event</a>
+        <a class="nav-link" href="#galeri">Galeri</a>
+        <a class="nav-link" href="#akademik">Akademik</a>
+        <a class="nav-link" href="#download">Download</a>
+        <a class="nav-link" href="#aspirasi">Aspirasi</a>
+        <a class="nav-link" href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SEKSI 1: BERANDA (HERO BANNER & GREETINGS) -->
+    <section id="beranda">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fas fa-code"></i> Sinergi & Inovasi Teknologi
+          </div>
+          <h1>HMJTI Jurusan <span>Teknologi Informasi</span></h1>
+          <p class="hero-desc">Wadah kolaborasi, inovasi, dan pengembangan potensi mahasiswa Jurusan Teknologi Informasi
+            untuk mewujudkan generasi unggul, mandiri, dan berdaya saing global.</p>
+
+          <!-- Sambutan Ketua HMJTI Card -->
+          <div class="sambutan-card">
+            <p class="sambutan-quote">Selamat datang di portal resmi HMJTI. Melalui platform digital ini, kami
+              berkomitmen menyajikan integrasi informasi kegiatan, layanan aspirasi, dan kolaborasi akademik yang
+              transparan serta solutif. Mari bersinergi dan berkarya bersama untuk kejayaan TI!</p>
+            <div class="sambutan-author">
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80"
+                alt="Foto Ketua HMJTI" class="sambutan-avatar">
+              <div class="sambutan-author-info">
+                <h4>Fauzan Aditama</h4>
+                <p>Ketua Himpunan HMJTI 2026/2027</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#aspirasi" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Kirim Aspirasi</a>
+            <a href="#tentang-sejarah" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Selengkapnya</a>
+          </div>
+        </div>
+
+        <!-- Hero Right Panel (Agenda Ringkas Widget) -->
+        <div class="hero-visual">
+          <div class="hero-visual-frame">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=500&q=80"
+              alt="Visual Teknologi IT">
+          </div>
+
+          <!-- Agenda Ringkas Widget -->
+          <div class="agenda-widget">
+            <div class="agenda-widget-header">
+              <h3><i class="fas fa-calendar-alt"></i> Agenda Terdekat</h3>
+              <span class="agenda-badge">Penting</span>
+            </div>
+            <div class="agenda-list">
+              <div class="agenda-item">
+                <div class="agenda-date">Mei<span>28</span></div>
+                <div class="agenda-info">
+                  <h4>Workshop Modern Web Dev</h4>
+                  <p><i class="fas fa-clock"></i> 09.00 WIB • Lab Komputer 3</p>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-date">Juni<span>05</span></div>
+                <div class="agenda-info">
+                  <h4>Pelatihan UI/UX Design</h4>
+                  <p><i class="fas fa-clock"></i> 13.00 WIB • Gedung TI R.202</p>
+                </div>
+              </div>
+              <div class="agenda-item">
+                <div class="agenda-date">Juni<span>18</span></div>
+                <div class="agenda-info">
+                  <h4>Open Recruitment Pengurus</h4>
+                  <p><i class="fas fa-clock"></i> 08.00 - Selesai • Aula Jurusan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI 2: TENTANG HMJTI -->
+    <section id="tentang" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Tentang Kami</span>
+          <h2>Mengenal Lebih Dekat <span>HMJTI</span></h2>
+          <p>Organisasi kemahasiswaan intra kampus yang berdedikasi mengayomi, menginspirasi, dan memberdayakan seluruh
+            civitas akademika Jurusan Teknologi Informasi.</p>
+        </div>
+
+        <div class="tentang-intro">
+          <div class="tentang-img-wrapper">
+            <div class="tentang-img">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=450&q=80"
+                alt="Diskusi Mahasiswa IT">
+            </div>
+          </div>
+          <div class="tentang-text">
+            <h3>Bergerak Bersama, Mengukir Karya</h3>
+            <p>Himpunan Mahasiswa Jurusan Teknologi Informasi (HMJTI) dibentuk sebagai wadah pengembangan intelektual,
+              keterampilan kepemimpinan, moral, dan kreativitas mahasiswa TI. Kami melayani sebagai jembatan komunikasi
+              yang efektif antara mahasiswa dengan birokrasi jurusan.</p>
+            <p>Dengan semangat kekeluargaan dan profesionalisme, kami berkomitmen menyelenggarakan program kerja yang
+              bernilai tambah guna memperkuat kompetensi akademik maupun soft-skill mahasiswa demi bersaing di era
+              revolusi industri 4.0.</p>
+          </div>
+        </div>
+
+        <!-- Tab System for Sub-menu -->
+        <div class="tentang-tabs" id="tentang-tabs-section">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-sejarah" id="tentang-sejarah-btn">Sejarah Singkat</button>
+            <button class="tab-btn" data-tab="tab-visimisi" id="tentang-visimisi-btn">Visi & Misi</button>
+            <button class="tab-btn" data-tab="tab-proker" id="tentang-proker-btn">Program Kerja</button>
+            <button class="tab-btn" data-tab="tab-adart" id="tentang-adart-btn">AD / ART Organisasi</button>
+          </div>
+
+          <!-- Tab Content: Sejarah -->
+          <div class="tab-content active" id="tab-sejarah">
+            <div class="sejarah-box">
+              <h3 style="margin-bottom: 1rem;"><i class="fas fa-history"
+                  style="color: var(--color-primary); margin-right: 0.5rem;"></i> Sejarah HMJTI</h3>
+              <p style="margin-bottom: 1rem;">HMJTI secara resmi didirikan pada tanggal 12 Oktober 2015 di bawah naungan
+                Fakultas Teknik dan Jurusan Teknologi Informasi. Kelahiran organisasi ini diinisiasi oleh kelompok
+                mahasiswa angkatan pertama yang melihat mendesaknya kebutuhan akan suatu lembaga yang mandiri untuk
+                mengkoordinasikan kegiatan mahasiswa, memfasilitasi riset teknologi, dan memperjuangkan aspirasi
+                mahasiswa TI.</p>
+              <p>Dari struktur kepengurusan awal yang hanya terdiri atas 15 orang, HMJTI kini telah bertransformasi
+                menjadi organisasi besar dengan lebih dari 80 fungsionaris aktif yang menaungi 4 divisi utama. HMJTI
+                telah sukses mengukir berbagai prestasi baik regional maupun nasional di bidang kompetisi coding,
+                jaringan, hingga pengabdian masyarakat berbasis desa digital.</p>
+            </div>
+          </div>
+
+          <!-- Tab Content: Visi Misi -->
+          <div class="tab-content" id="tab-visimisi">
+            <div class="visimisi-grid">
+              <div class="visimisi-card">
+                <i class="fas fa-eye"></i>
+                <h4>Visi</h4>
+                <p>Mewujudkan HMJTI sebagai wadah kolaboratif yang inklusif, adaptif, dan berwawasan teknologi tinggi
+                  demi melahirkan mahasiswa Teknologi Informasi yang unggul secara intelektual, profesional dalam
+                  berkarya, berintegritas moral, dan bersinergi dalam keragaman.</p>
+              </div>
+              <div class="visimisi-card">
+                <i class="fas fa-bullseye"></i>
+                <h4>Misi</h4>
+                <ul>
+                  <li><i class="fas fa-check-circle"></i> Membangun sistem internal organisasi yang profesional,
+                    transparan, dan berasaskan kekeluargaan.</li>
+                  <li><i class="fas fa-check-circle"></i> Mewadahi dan memfasilitasi pengembangan riset, inovasi
+                    teknologi, serta kreativitas akademik mahasiswa TI.</li>
+                  <li><i class="fas fa-check-circle"></i> Menjadi penyalur aspirasi mahasiswa yang aktif, komunikatif,
+                    responsif, dan memberikan solusi yang taktis.</li>
+                  <li><i class="fas fa-check-circle"></i> Membangun jaringan kemitraan eksternal dengan alumni,
+                    industri, dan komunitas IT nasional.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content: Program Kerja -->
+          <div class="tab-content" id="tab-proker">
+            <div class="proker-grid">
+              <div class="proker-card">
+                <div class="proker-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>TI-Camp & Hackathon</h4>
+                <p>Kompetisi pemrograman intensif selama 24 jam dan pelatihan dasar kepemimpinan (LDKM) bagi mahasiswa
+                  baru Jurusan Teknologi Informasi.</p>
+              </div>
+              <div class="proker-card">
+                <div class="proker-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4>Tech-Seminar & Workshop</h4>
+                <p>Rangkaian pelatihan rutin mengenai teknologi terbaru (AI, Cloud Computing, Cybersecurity, Mobile Web
+                  Dev) bersertifikat dengan instruktur ahli.</p>
+              </div>
+              <div class="proker-card">
+                <div class="proker-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>TI Peduli & Desa Binaan</h4>
+                <p>Pengabdian masyarakat berupa program melek digital bagi sekolah pedalaman dan digitasi administrasi
+                  kantor desa oleh relawan mahasiswa.</p>
+              </div>
+              <div class="proker-card">
+                <div class="proker-icon"><i class="fas fa-users-cog"></i></div>
+                <h4>Musyawarah Besar (MUBES)</h4>
+                <p>Kegiatan akhir kepengurusan untuk mengevaluasi laporan pertanggungjawaban (LPJ), revisi AD/ART, dan
+                  pemilihan Ketua HMJTI periode baru.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content: AD ART -->
+          <div class="tab-content" id="tab-adart">
+            <div class="adart-box">
+              <h3 style="margin-bottom: 1rem;"><i class="fas fa-gavel"
+                  style="color: var(--color-primary); margin-right: 0.5rem;"></i> Anggaran Dasar & Anggaran Rumah Tangga
+              </h3>
+              <p class="adart-intro">AD/ART merupakan pedoman hukum tertinggi yang mengatur landasan konstitusional,
+                struktur organisasi, hak dan kewajiban anggota, serta mekanisme persidangan fungsionaris HMJTI. Berikut
+                ringkasan poin krusial AD/ART HMJTI:</p>
+              <div class="adart-grid">
+                <div class="adart-card">
+                  <h5>Pasal 3: Asas & Sifat</h5>
+                  <p>Organisasi berasaskan Ketuhanan Yang Maha Esa, Pancasila, UUD 1945, Tri Dharma Perguruan Tinggi,
+                    dan bersifat independen, kekeluargaan, serta demokratis.</p>
+                </div>
+                <div class="adart-card">
+                  <h5>Pasal 9: Keanggotaan</h5>
+                  <p>Seluruh mahasiswa aktif Jurusan Teknologi Informasi terdaftar sebagai Anggota Biasa, sedangkan
+                    pengurus terdaftar sebagai Anggota Aktif.</p>
+                </div>
+                <div class="adart-card">
+                  <h5>Pasal 15: Struktur Kedaulatan</h5>
+                  <p>Kedaulatan tertinggi organisasi berada sepenuhnya di tangan anggota melalui forum Musyawarah Besar
+                    (Mubes) HMJTI.</p>
+                </div>
+                <div class="adart-card">
+                  <h5>Pasal 22: Sumber Keuangan</h5>
+                  <p>Pendapatan organisasi diperoleh dari dana kemahasiswaan jurusan, iuran pengurus sukarela, serta
+                    usaha kas mandiri yang halal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEKSI 3: KEPENGURUSAN -->
+    <section id="kepengurusan" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Fungsionaris</span>
+          <h2>Struktur Kepengurusan <span>HMJTI</span></h2>
+          <p>Kolaborasi anak bangsa bertalenta tinggi yang menggerakkan organisasi menuju visi yang gemilang.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="kepengurusan-tabs">
+          <button class="btn-filter active" data-filter="all">Semua Fungsionaris</button>
+          <button class="btn-filter" data-filter="inti">Badan Pengurus Inti</button>
+          <button class="btn-filter" data-filter="ristek">Divisi Riset & Teknologi</button>
+          <button class="btn-filter" data-filter="humas">Divisi Hubungan Masyarakat</button>
+          <button class="btn-filter" data-filter="psdm">Divisi PSDM</button>
+          <button class="btn-filter" data-filter="miba">Divisi Minat & Bakat</button>
+        </div>
+
+        <!-- Pengurus Cards Grid -->
+        <div class="pengurus-grid" id="pengurus-container">
+
+          <!-- Pengurus Inti: Ketua -->
+          <div class="pengurus-card filter-item inti">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Fauzan Aditama">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Ketua Umum</span>
+              <h4>Fauzan Aditama</h4>
+              <p>Mengkoordinir keseluruhan arah, kebijakan strategis, dan jalannya organisasi.</p>
+            </div>
+          </div>
+
+          <!-- Pengurus Inti: Wakil Ketua -->
+          <div class="pengurus-card filter-item inti">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Gavin Wiranata">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Wakil Ketua</span>
+              <h4>Gavin Wiranata</h4>
+              <p>Membantu Ketua Umum, mengawasi kinerja internal dan koordinasi divisi.</p>
+            </div>
+          </div>
+
+          <!-- Pengurus Inti: Sekretaris -->
+          <div class="pengurus-card filter-item inti">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Clara Amanda">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Sekretaris</span>
+              <h4>Clara Amanda</h4>
+              <p>Mengelola administrasi surat-menyurat, proposal, dan pengarsipan digital.</p>
+            </div>
+          </div>
+
+          <!-- Pengurus Inti: Bendahara -->
+          <div class="pengurus-card filter-item inti">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Saskia Kirana">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Bendahara</span>
+              <h4>Saskia Kirana</h4>
+              <p>Bertanggung jawab penuh atas manajemen arus kas dan pembukuan keuangan.</p>
+            </div>
+          </div>
+
+          <!-- Divisi 1: Riset & Teknologi -->
+          <div class="pengurus-card filter-item ristek">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Rafi Alifian">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Kabid Riset & Teknologi</span>
+              <h4>Rafi Alifian</h4>
+              <p>Memimpin penelitian mahasiswa, workshop ngoding, dan proyek inovasi IT.</p>
+            </div>
+          </div>
+
+          <!-- Divisi 2: Hubungan Masyarakat -->
+          <div class="pengurus-card filter-item humas">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Dimas Arisandi">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Kabid Humas</span>
+              <h4>Dimas Arisandi</h4>
+              <p>Menjadi gerbang komunikasi internal jurusan, media sosial, dan kerja sama eksternal.</p>
+            </div>
+          </div>
+
+          <!-- Divisi 3: PSDM -->
+          <div class="pengurus-card filter-item psdm">
+            <div class="pengurus-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Nabila Puteri">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Kabid PSDM</span>
+              <h4>Nabila Puteri</h4>
+              <p>Meningkatkan kapabilitas kepemimpinan pengurus serta kaderisasi mahasiswa baru.</p>
+            </div>
+          </div>
+
+          <!-- Divisi 4: Minat & Bakat -->
+          <div class="pengurus-card filter-item miba">
+            <div class="pengurus-img-container">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&h=350&q=80"
+                alt="Sarah Olivia">
+              <div class="pengurus-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+            <div class="pengurus-info">
+              <span class="pengurus-badge">Kabid Minat & Bakat</span>
+              <h4>Sarah Olivia</h4>
+              <p>Mengakomodasi ekspresi seni, kreativitas, kebugaran jasmani, dan hobi mahasiswa.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI 4: BERITA & ARTIKEL -->
+    <section id="berita" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Pusat Kabar</span>
+          <h2>Berita & <span>Artikel Terbaru</span></h2>
+          <p>Ikuti perkembangan informasi terkini, agenda penting jurusan, prestasi luar biasa mahasiswa, serta ulasan
+            menarik seputar teknologi.</p>
+        </div>
+
+        <div class="berita-grid">
+
+          <!-- Berita 1 -->
+          <div class="berita-card" data-news-id="1">
+            <div class="berita-img-wrapper">
+              <span class="berita-category">Prestasi</span>
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&h=300&q=80"
+                alt="Tim Hackathon HMJTI">
+            </div>
+            <div class="berita-content">
+              <div class="berita-meta">
+                <span><i class="far fa-calendar-alt"></i> 18 Mei 2026</span>
+                <span><i class="far fa-user"></i> Humas HMJTI</span>
+              </div>
+              <h3 class="berita-title">Selamat! Tim DevCode HMJTI Sabet Juara 1 Hackathon Nasional 2026</h3>
+              <p class="berita-excerpt">Kabar gembira datang dari panggung nasional! Tim delegasi riset HMJTI yang
+                beranggotakan tiga mahasiswa berprestasi berhasil memboyong trophy Juara Pertama pada ajang Hackathon
+                Nasional...</p>
+              <div class="berita-footer">
+                <button class="btn-read-more" data-target="news-1">Baca Selengkapnya <i
+                    class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+          <div class="berita-card" data-news-id="2">
+            <div class="berita-img-wrapper">
+              <span class="berita-category">Seminar</span>
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&h=300&q=80"
+                alt="Seminar Artificial Intelligence">
+            </div>
+            <div class="berita-content">
+              <div class="berita-meta">
+                <span><i class="far fa-calendar-alt"></i> 10 Mei 2026</span>
+                <span><i class="far fa-user"></i> Ristek HMJTI</span>
+              </div>
+              <h3 class="berita-title">Mengupas Tuntas Dampak AI dalam Pengembangan Karir Software Developer</h3>
+              <p class="berita-excerpt">Pekan lalu, Divisi Riset & Teknologi HMJTI menggelar stadium general interaktif
+                bertajuk "The AI Revolution in Software Industry". Seminar dihadiri ratusan mahasiswa dan menghadirkan
+                CTO...</p>
+              <div class="berita-footer">
+                <button class="btn-read-more" data-target="news-2">Baca Selengkapnya <i
+                    class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Berita 3 -->
+          <div class="berita-card" data-news-id="3">
+            <div class="berita-img-wrapper">
+              <span class="berita-category">Teknologi</span>
+              <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&h=300&q=80"
+                alt="Riset Mahasiswa TI">
+            </div>
+            <div class="berita-content">
+              <div class="berita-meta">
+                <span><i class="far fa-calendar-alt"></i> 02 Mei 2026</span>
+                <span><i class="far fa-user"></i> Litbang TI</span>
+              </div>
+              <h3 class="berita-title">5 Tren Pemrograman Terpopuler Tahun 2026 yang Wajib Dipelajari</h3>
+              <p class="berita-excerpt">Industri teknologi bergerak dengan kecepatan yang luar biasa. Agar tetap relevan
+                dan memiliki daya saing tinggi setelah lulus kuliah, mahasiswa TI wajib memahami tren frameworks...</p>
+              <div class="berita-footer">
+                <button class="btn-read-more" data-target="news-3">Baca Selengkapnya <i
+                    class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI 5: EVENT / KEGIATAN -->
+    <section id="event" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Garis Agenda</span>
+          <h2>Event & <span>Kegiatan Mendatang</span></h2>
+          <p>Jangan lewatkan serunya rangkaian kegiatan terdekat kami. Daftarkan diri Anda dan jadilah bagian dari
+            perubahan!</p>
+        </div>
+
+        <div class="event-timeline">
+
+          <!-- Event Node 1 -->
+          <div class="event-node">
+            <div class="event-timeline-date">
+              <div class="event-date-badge">
+                <span class="day">28</span>
+                <span class="month">Mei</span>
+                <span class="year">2026</span>
+              </div>
+            </div>
+            <div class="event-dot"></div>
+            <div class="event-timeline-content">
+              <div class="event-card">
+                <span class="event-status-badge status-upcoming">Pendaftaran Dibuka</span>
+                <h3>Workshop Modern Web Dev with Next.js & Vanilla CSS</h3>
+                <div class="event-card-meta">
+                  <span><i class="fas fa-clock"></i> 09.00 - 15.00 WIB</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Laboratorium Komputer 3</span>
+                  <span><i class="fas fa-user-friends"></i> Khusus Mahasiswa TI</span>
+                </div>
+                <p>Belajar langsung membangun web aplikasi super cepat menggunakan framework React terpopuler Next.js
+                  dan styling modern Vanilla CSS tanpa library pihak ketiga. Disediakan sertifikat elektronik dan snack
+                  gratis.</p>
+                <button class="btn btn-primary btn-daftar-event" data-event-name="Workshop Modern Web Dev">Daftar
+                  Sekarang <i class="fas fa-user-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Node 2 -->
+          <div class="event-node">
+            <div class="event-timeline-date">
+              <div class="event-date-badge">
+                <span class="day">05</span>
+                <span class="month">Juni</span>
+                <span class="year">2026</span>
+              </div>
+            </div>
+            <div class="event-dot"></div>
+            <div class="event-timeline-content">
+              <div class="event-card">
+                <span class="event-status-badge status-upcoming">Segera Hadir</span>
+                <h3>Pelatihan UI/UX Design & Wireframing dengan Figma</h3>
+                <div class="event-card-meta">
+                  <span><i class="fas fa-clock"></i> 13.00 - 16.30 WIB</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Gedung TI Ruang 202</span>
+                  <span><i class="fas fa-user-tie"></i> Pemateri: UI Designer GoTo</span>
+                </div>
+                <p>Mengupas dasar-dasar perancangan antarmuka pengguna (UI) yang estetis dan pengalaman pengguna (UX)
+                  yang solutif. Latihan langsung membuat wireframe dan prototipe interaktif di Figma.</p>
+                <button class="btn btn-outline btn-daftar-event" data-event-name="Pelatihan UI/UX Design">Ingatkan Saya
+                  <i class="far fa-bell"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Node 3 -->
+          <div class="event-node">
+            <div class="event-timeline-date">
+              <div class="event-date-badge">
+                <span class="day">12</span>
+                <span class="month">Juni</span>
+                <span class="year">2026</span>
+              </div>
+            </div>
+            <div class="event-dot"></div>
+            <div class="event-timeline-content">
+              <div class="event-card">
+                <span class="event-status-badge status-upcoming">Sosial</span>
+                <h3>HMJTI Mengabdi: Bakti Sosial & Instalasi Jaringan Desa</h3>
+                <div class="event-card-meta">
+                  <span><i class="fas fa-clock"></i> 08.00 WIB - Selesai</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Desa Sukatani Barat</span>
+                  <span><i class="fas fa-hand-holding-heart"></i> Pengabdian Masyarakat</span>
+                </div>
+                <p>Kegiatan bakti sosial pembagian sembako, santunan anak yatim piatu, serta program pengabdian berupa
+                  instalasi jaringan Wi-Fi gratis dan komputer dasar untuk sekolah dasar setempat.</p>
+                <button class="btn btn-outline btn-daftar-event" data-event-name="Bakti Sosial & Jaringan Desa">Gabung
+                  Relawan <i class="fas fa-heart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Node 4 -->
+          <div class="event-node">
+            <div class="event-timeline-date">
+              <div class="event-date-badge">
+                <span class="day">18</span>
+                <span class="month">Juni</span>
+                <span class="year">2026</span>
+              </div>
+            </div>
+            <div class="event-dot"></div>
+            <div class="event-timeline-content">
+              <div class="event-card">
+                <span class="event-status-badge status-upcoming">Kaderisasi</span>
+                <h3>Open Recruitment Pengurus HMJTI Periode 2026/2027</h3>
+                <div class="event-card-meta">
+                  <span><i class="fas fa-clock"></i> 08.00 WIB - Selesai</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Aula Gedung Jurusan TI</span>
+                  <span><i class="fas fa-users"></i> Khusus Mahasiswa TI Aktif</span>
+                </div>
+                <p>Kesempatan emas bagi seluruh mahasiswa Jurusan Teknologi Informasi angkatan 2024 & 2025 untuk
+                  berproses, mengasah kepemimpinan, dan berkontribusi langsung sebagai pengurus aktif HMJTI.</p>
+                <button class="btn btn-primary btn-daftar-event" data-event-name="OR Pengurus HMJTI">Daftar Fungsionaris
+                  <i class="fas fa-id-badge"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI 6: GALERI -->
+    <section id="galeri" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Dokumentasi</span>
+          <h2>Galeri <span>Kegiatan Mahasiswa</span></h2>
+          <p>Momen-momen indah penuh kolaborasi, keringat, tawa, dan kesuksesan yang terekam dalam setiap aksi nyata
+            HMJTI.</p>
+        </div>
+
+        <div class="galeri-grid">
+
+          <!-- Item Galeri 1 -->
+          <div class="galeri-item" data-galeri-title="Workshop Pemrograman Web 2025"
+            data-galeri-desc="Pelatihan interaktif React & Node.js untuk mahasiswa tingkat akhir."
+            data-galeri-img="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&h=450&q=80">
+            <img
+              src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Workshop Web 2025">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>Workshop Web Dev</h4>
+              <p>Maret 2025 • Lab Utama</p>
+            </div>
+          </div>
+
+          <!-- Item Galeri 2 -->
+          <div class="galeri-item" data-galeri-title="Bakti Sosial & Desa Digital"
+            data-galeri-desc="Bantuan komputer dan instalasi router internet untuk Sekolah Dasar di Sukatani."
+            data-galeri-img="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&h=450&q=80">
+            <img
+              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Bakti Sosial">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>TI Mengabdi</h4>
+              <p>Agustus 2025 • Desa Sukatani</p>
+            </div>
+          </div>
+
+          <!-- Item Galeri 3 -->
+          <div class="galeri-item" data-galeri-title="Musyawarah Besar Luar Biasa 2025"
+            data-galeri-desc="Penyusunan program kerja taktis dan evaluasi konstitusi AD/ART."
+            data-galeri-img="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&h=450&q=80">
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Mubes HMJTI">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>Musyawarah Besar</h4>
+              <p>Oktober 2025 • Aula Rektorat</p>
+            </div>
+          </div>
+
+          <!-- Item Galeri 4 -->
+          <div class="galeri-item" data-galeri-title="Makrab & Gathering Internal"
+            data-galeri-desc="Malam keakraban santai antar pengurus lintas angkatan di perkemahan."
+            data-galeri-img="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&h=450&q=80">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Makrab HMJTI">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>Malam Keakraban</h4>
+              <p>Desember 2025 • Coban Rondo</p>
+            </div>
+          </div>
+
+          <!-- Item Galeri 5 -->
+          <div class="galeri-item" data-galeri-title="Pelatihan Dasar Kepemimpinan 2026"
+            data-galeri-desc="Orientasi kepemimpinan, teamwork, dan problem solving kepengurusan baru."
+            data-galeri-img="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=600&h=450&q=80">
+            <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Pelatihan Kepemimpinan">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>Pelatihan Kepemimpinan</h4>
+              <p>Januari 2026 • Hotel Green Palm</p>
+            </div>
+          </div>
+
+          <!-- Item Galeri 6 -->
+          <div class="galeri-item" data-galeri-title="Kuliah Tamu & Workshop UI/UX"
+            data-galeri-desc="Kolaborasi HMJTI dengan praktisi UI/UX guna meningkatkan kualitas tugas mahasiswa."
+            data-galeri-img="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&h=450&q=80">
+            <img
+              src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=500&h=350&q=80"
+              alt="Pelatihan UI/UX">
+            <div class="galeri-overlay">
+              <div class="galeri-icon"><i class="fas fa-search-plus"></i></div>
+              <h4>Pelatihan UI/UX</h4>
+              <p>Maret 2026 • Lab Komputer 2</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEKSI 7: AKADEMIK (PROJECTS, BEASISWA, INTERNSHIP) -->
+    <section id="akademik" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Dunia Kampus</span>
+          <h2>Akademik & <span>Karir Mahasiswa</span></h2>
+          <p>Pusat informasi penunjang studi: karya mahasiswa terbaik, alur penyusunan karya ilmiah, informasi beasiswa,
+            hingga lowongan magang.</p>
+        </div>
+
+        <div class="akademik-grid">
+
+          <!-- Box Kiri: Hasil Project & Panduan -->
+          <div class="akademik-box">
+            <div class="akademik-box-header">
+              <i class="fas fa-lightbulb"></i>
+              <div>
+                <h3>Hasil Project & Panduan</h3>
+                <p>Showcase inovasi tugas besar & pedoman tugas akhir</p>
+              </div>
+            </div>
+
+            <div class="project-list" style="margin-bottom: 2.5rem;">
+              <h4
+                style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--color-charcoal); border-left: 3px solid var(--color-primary); padding-left: 0.5rem;">
+                Project Terbaik Mahasiswa</h4>
+
+              <!-- Project 1 -->
+              <div class="project-item">
+                <div class="project-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Project Web">
+                </div>
+                <div class="project-info">
+                  <span class="project-badge">Tugas Besar Web Dev II</span>
+                  <h4>SIMAS - Sistem Informasi Manajemen Masjid</h4>
+                  <p>Membangun sistem keuangan dan inventarisasi masjid terintegrasi QR-code.</p>
+                  <a href="#" class="detail-project-trigger"
+                    data-project-title="SIMAS - Sistem Informasi Manajemen Masjid"
+                    data-project-desc="Project ini dibangun oleh Tim Coder TI angkatan 2024 menggunakan Next.js, PostgreSQL, dan Tailwind CSS. Aplikasi mempermudah takmir masjid memantau transparansi kas masuk/keluar, reservasi peminjaman aula, serta laporan audit bulanan secara otomatis via integrasi WhatsApp API.">Detail
+                    Project <i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-item">
+                <div class="project-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Project IoT">
+                </div>
+                <div class="project-info">
+                  <span class="project-badge">Tugas Besar IoT & Sensor</span>
+                  <h4>Smart Greenhouse System</h4>
+                  <p>Pengontrolan kelembaban tanaman otomatis berbasis ESP32 & MQTT Protokol.</p>
+                  <a href="#" class="detail-project-trigger" data-project-title="Smart Greenhouse System"
+                    data-project-desc="Dirancang oleh mahasiswa peminat hardware angkatan 2023. Menggunakan mikrokontroler ESP32, sensor kelembaban tanah DHT22, dan selenoid valve. Sistem dapat menyiram tanaman secara presisi ketika tanah kering dan mengirim data metrik suhu ke dashboard web via protokol MQTT.">Detail
+                    Project <i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panduan Section -->
+            <div class="guide-list">
+              <h4
+                style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--color-charcoal); border-left: 3px solid var(--color-primary); padding-left: 0.5rem;">
+                Panduan PKL & Skripsi</h4>
+
+              <div class="guide-item">
+                <div class="guide-icon-wrapper">
+                  <div class="file-icon"><i class="fas fa-file-pdf"></i></div>
+                  <div class="guide-text">
+                    <h4>Alur Pendaftaran PKL</h4>
+                    <p>SOP, pengajuan instansi, hingga laporan PKL.</p>
+                  </div>
+                </div>
+                <a href="#download" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.75rem;"><i
+                    class="fas fa-eye"></i> SOP</a>
+              </div>
+
+              <div class="guide-item">
+                <div class="guide-icon-wrapper">
+                  <div class="file-icon"><i class="fas fa-file-word"></i></div>
+                  <div class="guide-text">
+                    <h4>Template Penulisan Skripsi</h4>
+                    <p>Format margin, sitasi Mendeley, dan bab pembahasan.</p>
+                  </div>
+                </div>
+                <a href="#download" class="btn btn-outline" style="padding: 0.45rem 1rem; font-size: 0.75rem;"><i
+                    class="fas fa-eye"></i> DOCX</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Box Kanan: Beasiswa & Magang -->
+          <div class="akademik-box">
+            <div class="akademik-box-header">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <h3>Beasiswa & Magang</h3>
+                <p>Peluang akselerasi masa depan cerah Anda</p>
+              </div>
+            </div>
+
+            <div class="beasiswamagang-list" style="margin-bottom: 2.5rem;">
+              <h4
+                style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--color-charcoal); border-left: 3px solid var(--color-primary); padding-left: 0.5rem;">
+                Info Beasiswa Aktif</h4>
+
+              <!-- Beasiswa 1 -->
+              <div class="opportunity-card">
+                <div class="opportunity-info">
+                  <h4>Beasiswa Prestasi Djarum Plus 2026</h4>
+                  <div class="opportunity-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Deadline: 30 Juni 2026</span>
+                    <span><i class="fas fa-dollar-sign"></i> Rp 1.5 Juta / Bulan</span>
+                  </div>
+                  <p class="opportunity-desc">Diperuntukkan mahasiswa semester 4 dengan IPK minimal 3.30. Dapatkan
+                    pelatihan soft-skill eksklusif.</p>
+                </div>
+                <button class="btn btn-primary detail-beasiswa-trigger" data-opp-title="Beasiswa Djarum Plus 2026"
+                  data-opp-desc="Program Beasiswa Bakti Pendidikan Djarum Foundation. Memberikan bantuan biaya pendidikan sebesar Rp1.500.000,- setiap bulan selama satu tahun. Syarat pendaftaran: Mahasiswa aktif S1/D4 semester IV, IPK minimal 3.30, aktif berorganisasi (ditunjukkan dengan sertifikat HMJTI/UKM), dan lolos ujian tertulis secara online."
+                  style="padding: 0.5rem 1rem; font-size: 0.8rem;">Detail</button>
+              </div>
+
+              <!-- Beasiswa 2 -->
+              <div class="opportunity-card">
+                <div class="opportunity-info">
+                  <h4>Beasiswa KSE (Karya Salemba Empat)</h4>
+                  <div class="opportunity-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Deadline: 10 Juni 2026</span>
+                    <span><i class="fas fa-dollar-sign"></i> Bantuan UKT + Uang Saku</span>
+                  </div>
+                  <p class="opportunity-desc">Peluang beasiswa bagi mahasiswa yang membutuhkan dukungan finansial
+                    disertai kepemimpinan kokoh.</p>
+                </div>
+                <button class="btn btn-primary detail-beasiswa-trigger"
+                  data-opp-title="Beasiswa Karya Salemba Empat (KSE)"
+                  data-opp-desc="Yayasan Karya Salemba Empat kembali membuka kesempatan beasiswa untuk mahasiswa jenjang sarjana. Bantuan mencakup dukungan dana SPP/UKT, program pelatihan entrepreneurship, kepemimpinan, tatap muka industri, dan dukungan dana riset untuk proyek akhir skripsi. Terbuka bagi angkatan 2023, 2024, dan 2025."
+                  style="padding: 0.5rem 1rem; font-size: 0.8rem;">Detail</button>
+              </div>
+            </div>
+
+            <div class="beasiswamagang-list">
+              <h4
+                style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--color-charcoal); border-left: 3px solid var(--color-primary); padding-left: 0.5rem;">
+                Info Magang (Internship)</h4>
+
+              <!-- Magang 1 -->
+              <div class="opportunity-card">
+                <div class="opportunity-info">
+                  <h4>Front-End Intern di Tokopedia (Batch 8)</h4>
+                  <div class="opportunity-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Jakarta / Remote</span>
+                    <span><i class="fas fa-briefcase"></i> Durasi: 6 Bulan</span>
+                  </div>
+                  <p class="opportunity-desc">Mengembangkan halaman responsif dengan React.js/Next.js. Kesempatan
+                    ditarik pegawai tetap.</p>
+                </div>
+                <button class="btn btn-dark detail-magang-trigger" data-opp-title="Front-End Intern di Tokopedia"
+                  data-opp-desc="Tokopedia membuka lowongan Magang Mahasiswa untuk posisi Front-End Web Engineer. Kualifikasi: Mahasiswa TI tingkat akhir, menguasai HTML, CSS, JavaScript, React.js, dan Git untuk control version. Magang berbayar dengan insentif bulanan menarik, laptop difasilitasi kantor, dan mentor handal berpengalaman."
+                  style="padding: 0.5rem 1rem; font-size: 0.8rem;">Lamar</button>
+              </div>
+
+              <!-- Magang 2 -->
+              <div class="opportunity-card">
+                <div class="opportunity-info">
+                  <h4>IT Support Specialist di BUMN Telkom</h4>
+                  <div class="opportunity-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Regional Office (On-site)</span>
+                    <span><i class="fas fa-briefcase"></i> Durasi: 3 Bulan</span>
+                  </div>
+                  <p class="opportunity-desc">Membantu pemeliharaan infrastruktur jaringan, troubleshooting komputer,
+                    dan server kantor.</p>
+                </div>
+                <button class="btn btn-dark detail-magang-trigger"
+                  data-opp-title="IT Support Specialist Intern di Telkom"
+                  data-opp-desc="Telkom Regional membuka kesempatan magang IT Support. Tugas utama: Melakukan troubleshooting jaringan lokal (LAN/WAN), setup IP address router Cisco, pemeliharaan workstation karyawan, dan instalasi sistem operasi Linux Server. Mendapatkan sertifikat magang resmi BUMN yang bernilai tinggi untuk CV Anda."
+                  style="padding: 0.5rem 1rem; font-size: 0.8rem;">Lamar</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEKSI 8: DOWNLOAD DOKUMEN DIGITAL -->
+    <section id="download" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Pusat Berkas</span>
+          <h2>Download <span>Dokumen Administrasi</span></h2>
+          <p>Temukan template proposal, kop surat resmi, logo resmi beresolusi tinggi, dan dokumen penting lainnya untuk
+            kebutuhan akademik dan organisasi.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="download-table">
+            <thead>
+              <tr>
+                <th>Nama Dokumen</th>
+                <th>Tipe File</th>
+                <th>Ukuran</th>
+                <th>Kategori</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dokumen 1 -->
+              <tr>
+                <td>
+                  <div class="doc-info">
+                    <i class="fas fa-file-word doc-icon"></i>
+                    <div>
+                      <span class="doc-title">Formulir Proposal Kegiatan HMJTI</span>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">SOP pengajuan dana kegiatan
+                        mahasiswa jurusan</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="doc-type-badge">DOCX</span></td>
+                <td>345 KB</td>
+                <td>Organisasi</td>
+                <td>
+                  <button class="btn-download-table" data-filename="Proposal_Kegiatan_HMJTI.docx"><i
+                      class="fas fa-download"></i> Unduh</button>
+                </td>
+              </tr>
+              <!-- Dokumen 2 -->
+              <tr>
+                <td>
+                  <div class="doc-info">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div>
+                      <span class="doc-title">Template Surat Izin Dispensasi Kuliah</span>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">Surat resmi permohonan izin
+                        dispensasi tidak masuk kelas</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="doc-type-badge" style="background-color: #fee2e2; color: #b91c1c;">PDF</span></td>
+                <td>180 KB</td>
+                <td>Akademik</td>
+                <td>
+                  <button class="btn-download-table" data-filename="Template_Dispensasi_Kuliah.pdf"><i
+                      class="fas fa-download"></i> Unduh</button>
+                </td>
+              </tr>
+              <!-- Dokumen 3 -->
+              <tr>
+                <td>
+                  <div class="doc-info">
+                    <i class="fas fa-file-image doc-icon"></i>
+                    <div>
+                      <span class="doc-title">Paket Logo HMJTI Resolusi Tinggi (PNG & SVG)</span>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">Logo warna transparan untuk
+                        kebutuhan pamflet lomba</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="doc-type-badge" style="background-color: #dcfce7; color: #166534;">ZIP</span></td>
+                <td>2.4 MB</td>
+                <td>Desain Asset</td>
+                <td>
+                  <button class="btn-download-table" data-filename="Logo_HMJTI_HighRes.zip"><i
+                      class="fas fa-download"></i> Unduh</button>
+                </td>
+              </tr>
+              <!-- Dokumen 4 -->
+              <tr>
+                <td>
+                  <div class="doc-info">
+                    <i class="fas fa-file-pdf doc-icon"></i>
+                    <div>
+                      <span class="doc-title">Konstitusi AD / ART HMJTI Lengkap</span>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted);">Hasil amandemen rapat akbar
+                        fungsionaris Oktober 2025</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="doc-type-badge" style="background-color: #fee2e2; color: #b91c1c;">PDF</span></td>
+                <td>1.2 MB</td>
+                <td>Undang-Undang</td>
+                <td>
+                  <button class="btn-download-table" data-filename="AD_ART_HMJTI_2025.pdf"><i
+                      class="fas fa-download"></i> Unduh</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEKSI 9: ASPIRASI MAHASISWA -->
+    <section id="aspirasi" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Kotak Saran</span>
+          <h2>Layanan Aspirasi <span>Mahasiswa TI</span></h2>
+          <p>Kritik konstruktif, saran taktis, atau aduan fasilitas belajar Anda adalah bensin perubahan kami. Suara
+            Anda sepenuhnya dilindungi secara aman.</p>
+        </div>
+
+        <div class="aspirasi-container">
+          <form id="aspirasi-form" novalidate>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="aspirasi-nama" class="form-label">Nama Anda (Kosongkan jika Anonim)</label>
+                <input type="text" id="aspirasi-nama" class="form-control" placeholder="Contoh: Budi Santoso">
+              </div>
+              <div class="form-group">
+                <label for="aspirasi-kontak" class="form-label">NIM / Email Kontak (Opsional)</label>
+                <input type="text" id="aspirasi-kontak" class="form-control"
+                  placeholder="NIM / Email untuk kelanjutan aduan">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="aspirasi-kategori" class="form-label">Kategori Aspirasi <span
+                  style="color: var(--color-primary);">*</span></label>
+              <select id="aspirasi-kategori" class="form-control" required>
+                <option value="" disabled selected>-- Pilih Kategori --</option>
+                <option value="Saran Program Kerja">Saran Program Kerja HMJTI</option>
+                <option value="Pengaduan Fasilitas Kampus">Pengaduan Fasilitas (Lab / Kelas / AC)</option>
+                <option value="Keluhan Birokrasi & Dosen">Keluhan Birokrasi & Dosen Jurusan</option>
+                <option value="Ide Kegiatan / Workshop">Ide Kegiatan / Workshop Teknologi</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="aspirasi-pesan" class="form-label">Detail Isi Aspirasi <span
+                  style="color: var(--color-primary);">*</span></label>
+              <textarea id="aspirasi-pesan" class="form-control"
+                placeholder="Tuliskan secara jelas, runtut, dan detail kritik atau saran Anda..." required></textarea>
+              <span class="form-info-text">Mohon gunakan bahasa yang sopan, rasional, dan konstruktif.</span>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" id="aspirasi-setuju" required>
+              <span>Saya menyatakan bahwa informasi yang disampaikan di atas adalah jujur, benar, dan dibuat tanpa
+                paksaan dari pihak mana pun demi kebaikan Jurusan Teknologi Informasi.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary form-submit-btn"><i class="fas fa-paper-plane"></i> Kirim
+              Aspirasi Mahasiswa</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEKSI 10: KONTAK (INFO & QUICK CONTACT FORM) -->
+    <section id="kontak" class="section-padding">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="tag">Hubungi Kami</span>
+          <h2>Kontak <span>Sekretariat HMJTI</span></h2>
+          <p>Memiliki pertanyaan, penawaran kolaborasi sponsorship, atau ingin bertamu secara resmi? Silakan hubungi
+            pintu masuk kami di bawah ini.</p>
+        </div>
+
+        <div class="kontak-grid">
+
+          <!-- Kontak Info Detail & Peta -->
+          <div class="kontak-info">
+
+            <div class="kontak-card">
+              <div class="kontak-icon"><i class="fas fa-map-marked-alt"></i></div>
+              <div class="kontak-details">
+                <h4>Sekretariat HMJTI</h4>
+                <p>Gedung Kemahasiswaan TI Lantai 1, Fakultas Teknik, Kampus Utama Jl. Ahmad Yani No. 45, Malang, Jawa
+                  Timur</p>
+              </div>
+            </div>
+
+            <div class="kontak-card">
+              <div class="kontak-icon"><i class="fas fa-envelope"></i></div>
+              <div class="kontak-details">
+                <h4>Email Resmi</h4>
+                <p>hmjti@universitas.ac.id<br>support.hmjti@universitas.ac.id</p>
+              </div>
+            </div>
+
+            <div class="kontak-card">
+              <div class="kontak-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="kontak-details">
+                <h4>Kontak & Media Sosial</h4>
+                <p>Hotline: +62 812-3456-7890 (Dimas - Humas)<br>Instagram: @hmjti_official</p>
+              </div>
+            </div>
+
+            <!-- Stylized CSS Mock Map -->
+            <div class="map-mock-box">
+              <div class="map-mock-bg"></div>
+              <div class="map-mock-river"></div>
+              <div class="map-mock-road-1"></div>
+              <div class="map-mock-road-2"></div>
+              <div class="map-mock-park">Hutan Kampus</div>
+              <div class="map-pin" id="map-pin-btn">
+                <div class="map-tooltip">Sekretariat HMJTI (Gedung TI Lt. 1)</div>
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="map-pin-pulse"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="kontak-form-box">
+            <h3>Kirim Pesan Cepat</h3>
+            <p>Silakan isi formulir di bawah ini, admin humas kami akan merespon email Anda dalam waktu 1x24 jam kerja.
+            </p>
+
+            <form id="kontak-form" novalidate>
+              <div class="form-group">
+                <label for="kontak-nama" class="form-label">Nama Lengkap <span
+                    style="color: var(--color-primary);">*</span></label>
+                <input type="text" id="kontak-nama" class="form-control" placeholder="Contoh: Rian Hidayat" required>
+              </div>
+              <div class="form-group">
+                <label for="kontak-email" class="form-label">Alamat Email <span
+                    style="color: var(--color-primary);">*</span></label>
+                <input type="email" id="kontak-email" class="form-control" placeholder="Contoh: rian.hidayat@gmail.com"
+                  required>
+              </div>
+              <div class="form-group">
+                <label for="kontak-subjek" class="form-label">Subjek Pesan <span
+                    style="color: var(--color-primary);">*</span></label>
+                <input type="text" id="kontak-subjek" class="form-control"
+                  placeholder="Contoh: Kerja Sama Lomba / Pengajuan Sponsorship" required>
+              </div>
+              <div class="form-group">
+                <label for="kontak-pesan" class="form-label">Isi Pesan Lengkap <span
+                    style="color: var(--color-primary);">*</span></label>
+                <textarea id="kontak-pesan" class="form-control"
+                  placeholder="Tuliskan secara lengkap maksud dan tujuan Anda mengirim pesan ini..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit-btn"><i class="fas fa-paper-plane"></i> Kirim
+                Pesan Email</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+
+      <!-- Info HMJTI -->
+      <div class="footer-info-col">
+        <h3><span>HMJTI</span></h3>
+        <p>Himpunan Mahasiswa Jurusan Teknologi Informasi merupakan lembaga kemahasiswaan tertinggi tingkat jurusan yang
+          aktif menyatukan tekad, mengasah akal, dan memberi manfaat bagi masyarakat.</p>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul class="footer-links-list">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#tentang-sejarah">Tentang Kami</a></li>
+          <li><a href="#kepengurusan">Kepengurusan</a></li>
+          <li><a href="#berita">Berita & Artikel</a></li>
+          <li><a href="#event">Event & Agenda</a></li>
+        </ul>
+      </div>
+
+      <!-- Akademik & Berkas Links -->
+      <div class="footer-col">
+        <h4>Akademik & Berkas</h4>
+        <ul class="footer-links-list">
+          <li><a href="#akademik">Hasil Project</a></li>
+          <li><a href="#akademik">Pedoman PKL</a></li>
+          <li><a href="#akademik">Info Beasiswa</a></li>
+          <li><a href="#download">Download Formulir</a></li>
+          <li><a href="#aspirasi">Kotak Aspirasi</a></li>
+        </ul>
+      </div>
+
+      <!-- Alamat & Jam Kerja -->
+      <div class="footer-col">
+        <h4>Alamat Kantor</h4>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Gedung TI Lantai 1, Kampus Utama, Universitas Negeri Malang, Jawa Timur</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>hmjti@universitas.ac.id</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Senin - Jumat: 08.00 - 16.00 WIB<br>Sabtu & Minggu: Tutup</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Himpunan Mahasiswa Jurusan Teknologi Informasi (HMJTI). Hak Cipta Dilindungi Undang-Undang.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Ketentuan Layanan</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP FLOATING BUTTON -->
+  <button class="back-to-top" id="back-to-top-btn" aria-label="Kembali ke Atas"><i
+      class="fas fa-chevron-up"></i></button>
+
+  <!-- Custom JavaScript (script.js) -->
+  <script src="script.js"></script>
+</body>
+
+</html>
